@@ -1,0 +1,26 @@
+{
+  "home_header_title": "Home",
+  "notifications_header_title": "Notifications",
+  "settings_header_title": "Settings",
+  "messages_header_title": "Messages",
+  "search_header_title": "Search",
+  "profile_header_title": "Profile",
+  "login_header_title": "Login",
+  "register_header_title": "Register",
+  "activation_header_title": "Activation",
+
+  "auth_form_code": "Activation Code",
+  "auth_form_username": "Username",
+  "auth_form_email": "Email",
+  "auth_form_phone": "Phone",
+  "auth_form_password": "Password",
+  "auth_form_password_confirmation": "Password Confirmation",
+  "auth_form_login_btn": "Sign In",
+  "auth_form_signup_btn": "Sign up",
+  "auth_form_activate_btn": "Activate your Account",
+  "auth_form_forgot_pass_btn": "Forgot your password?",
+  "auth_form_dont_have_account": "Don&apos;t have an account?",
+  "auth_form_do_have_account": "Do you have account ?"
+
+
+}

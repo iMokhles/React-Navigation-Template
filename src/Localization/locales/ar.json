@@ -1,0 +1,24 @@
+{
+  "home_header_title": "الرئيسية",
+  "notifications_header_title": "الأشعارات",
+  "messages_header_title": "الرسائل",
+  "search_header_title": "البحث",
+  "profile_header_title": "أنا",
+  "login_header_title": "تسجيل دخول",
+  "register_header_title": "عضوية جديدة",
+
+  "auth_form_code": "رمز التفعيل",
+  "auth_form_username": "إسم المستخدم",
+  "auth_form_password": "كلمة المرور",
+  "auth_form_login_btn": "تسجيل دخول",
+  "auth_form_signup_btn": "تسجيل عضوية",
+  "auth_form_activate_btn": "تفعيل الحساب",
+  "auth_form_forgot_pass_btn": "نسيت كلمة مرورك ؟",
+  "auth_form_dont_have_account": "لا تملك حساب ؟",
+  "auth_form_do_have_account": "هل تملك حساب بالفعل ؟",
+
+  "auth_form_email": "بريد الكتروني صالح",
+  "auth_form_phone": "رقم هاتفك",
+  "auth_form_password_confirmation": "تأكيد كلمة المرور"
+
+}
