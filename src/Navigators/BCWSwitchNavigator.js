@@ -1,6 +1,7 @@
 import { SwitchNavigator } from 'react-navigation';
 import BCWLaunchScreen from "./Launch/BCWLaunchScreen";
 import BCWTabController from "./Tab/BCWTabController";
+import BCWAuthNavigator from "./Auth/BCWAuthNavigator";
 
 const BCWSWitchNavigator = SwitchNavigator({
     Launch: {
@@ -9,10 +10,10 @@ const BCWSWitchNavigator = SwitchNavigator({
     Tab: {
         screen: BCWTabController
     },
-    // Auth: {
-    //     screen: ''
-    // },
+    Auth: {
+        screen: BCWAuthNavigator
+    },
 }, {
-    initialRouteName: 'Tab',
+    initialRouteName: 'Launch',
 });
 export default BCWSWitchNavigator;

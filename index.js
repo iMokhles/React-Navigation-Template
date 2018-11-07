@@ -1,5 +1,7 @@
 /** @format */
 
+import './src/Services/ReactOtron/ReactotronConfig';
+
 import {AppRegistry, I18nManager, View, StatusBar } from 'react-native';
 import BCAppDelegate from "./src/AppDelegate/BCAppDelegate";
 import {name as appName} from './app.json';

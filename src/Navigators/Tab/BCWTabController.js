@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Animated } from 'react-native';
 // import Icon from 'react-native-vector-icons/Ionicons';
 
-import { createBottomTabNavigator, createStackNavigator, TabBarBottom } from 'react-navigation';
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import BCWHomeScreen from "./Screens/Home/BCWHomeScreen";
 import BCWNotificationsScreen from "./Screens/Notifications/BCWNotificationsScreen";
 import BCWSettingsScreen from "./Screens/Settings/BCWSettingsScreen";
@@ -72,7 +72,7 @@ export default (BCWTabController = createBottomTabNavigator(
         },
     },
     {
-        initialRouteName: 'Notifications',
+        initialRouteName: 'Home',
         order: [ 'Home', 'Notifications', 'Settings'],
         tabBarOptions: {
             activeTintColor: Colors.blacktxt,

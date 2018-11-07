@@ -5,7 +5,7 @@ type Props = {};
 export default class BCWHeader extends Component<Props> {
     render() {
         return (
-            <Header style={{backgroundColor: Colors.blacktxt, justifyContent:'center', alignItems:'center'}}>
+            <Header style={{backgroundColor: Colors.blacktxt, justifyContent:'center', alignItems:'center'}} hasTabs>
                 {this.props.children}
             </Header>
 

@@ -11,7 +11,9 @@
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.4",
     "react-native-i18n": "^2.0.15",
+    "react-native-swiper": "^1.5.13",
     "react-navigation": "^2.18.2",
+    "reactotron-react-native": "^2.1.0",
     "teaset": "^0.5.9"
   },
   "devDependencies": {

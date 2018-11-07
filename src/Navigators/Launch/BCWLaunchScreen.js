@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, Alert, Text, View, Image, StatusBar, Platform, ImageBackground ,TouchableOpacity, StyleSheet, I18nManager} from 'react-native';
+import { ActivityIndicator, View, StyleSheet} from 'react-native';
 import { Fonts, Metrics, Colors, Images } from '../../Style/Themes';
 
 import BCWCurrentUser from "../../Services/BCWCurrentUser";
@@ -15,26 +15,15 @@ export default class BCWLaunchScreen extends Component<Props> {
     componentWillMount() {
         BCWCurrentUser.isLoggedIn()
             .then(isLoggedIn => {
-                this.props.navigation.navigate(isLoggedIn ? 'App' : 'Auth')
+                this.props.navigation.navigate(isLoggedIn ? 'Tab' : 'Auth')
             })
     }
 
     render () {
-        let ic_logo = { uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Circle-icons-piechart.svg/1024px-Circle-icons-piechart.svg.png' };
-
         return (
-            <Container style={{backgroundColor: '#002C85'}}>
-                <BCWHeader>
-                    <StatusBar barStyle="light-content"/>
-                    <BCWHeaderTitle/>
-                </BCWHeader>
-
-                <View style={styles.logosec}>
-                    <Image source={ic_logo} style={styles.logostyle}/>
-                </View>
-
+            <Container style={{backgroundColor: Colors.blacktxt}}>
                 <View style={styles.container}>
-                    <ActivityIndicator size="large"/>
+                    <ActivityIndicator size="large" color={Colors.whites}/>
                 </View>
             </Container>
         );
