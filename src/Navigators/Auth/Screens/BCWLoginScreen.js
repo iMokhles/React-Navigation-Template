@@ -42,7 +42,7 @@ export default class BCWLoginScreen extends Component<Props> {
     }
 
     render () {
-        let BG_logo = {
+        let appLogo = {
             uri : 'https://www.imperialnissan.co.za/images/Dealership/Icons/Car-White.png'
         };
         return (
@@ -58,41 +58,41 @@ export default class BCWLoginScreen extends Component<Props> {
                     <BCWHeaderTitle>{ I18n.t('login_header_title') }</BCWHeaderTitle>
                     <Right/>
                 </BCWHeader>
-                <View style={styles.logosec}>
-                    <Image source={BG_logo} style={ styles.logo14 }/>
+                <View style={styles.logoSectionStyle}>
+                    <Image source={appLogo} style={ styles.logoImageStyle }/>
                 </View>
 
                 <View>
                     <View>
                         <Form style={styles.form}>
-                            <Item rounded style={styles.inputStyle}>
+                            <Item rounded style={styles.itemStyle}>
                                 <Input
                                     placeholderTextColor="#ffffff"
-                                    textAlign={I18nManager.isRTL ? "right" : "left"}
+                                    textAlign="left"
                                     placeholder="Email"
-                                    style={styles.inputmain}
+                                    style={styles.inputStyle}
                                 />
                             </Item>
-                            <Item rounded style={[styles.inputStyle, { marginTop: 10 }]}>
+                            <Item rounded style={[styles.itemStyle, { marginTop: 10 }]}>
                                 <Input
                                     placeholderTextColor="#ffffff"
                                     placeholder="Password"
                                     secureTextEntry={true}
-                                    textAlign={I18nManager.isRTL ? "right" : "left"}
-                                    style={styles.inputmain}
+                                    textAlign="left"
+                                    style={styles.inputStyle}
                                 />
                             </Item>
                             <TouchableOpacity onPress={() => this.forgotPassword()}>
-                                <Text autoCapitalize="words" style={styles.buttongettext}>
+                                <Text autoCapitalize="words" style={styles.forgotPasswordTextStyle}>
                                     Forgot your password?
                                 </Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 info
-                                style={styles.signInbtn}
+                                style={styles.signInButtonStyle}
                                 onPress={() => this.login()}
                             >
-                                <Text autoCapitalize="words" style={styles.buttongetstarted}>
+                                <Text autoCapitalize="words" style={styles.signInButtonTextStyle}>
                                     Sign In
                                 </Text>
                             </TouchableOpacity>
@@ -106,24 +106,16 @@ export default class BCWLoginScreen extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
-    logosec:{
+    logoSectionStyle:{
         height: (Metrics.HEIGHT*0.20),
         backgroundColor:'transparent',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    logo14:{
+    logoImageStyle:{
         height: (Metrics.HEIGHT*0.15),
         width:  (Metrics.WIDTH*0.35),
         marginTop: 10,
-    },
-    backarrow:{
-        left:0,
-        top:0,
-        width: 30,
-        position: 'absolute',
-        marginTop: 20,
-        marginLeft: 20
     },
     form: {
         width: Metrics.WIDTH,
@@ -133,13 +125,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignSelf: "center"
     },
-    inputStyle: {
+    itemStyle: {
         borderColor: "transparent",
         justifyContent: "center",
         alignSelf: "center",
         width: Metrics.WIDTH * 0.8
     },
-    inputmain: {
+    inputStyle: {
         fontFamily: Fonts.type.PlayfairDisplayBold,
         color: Colors.snow,
         justifyContent: "center",
@@ -151,7 +143,7 @@ const styles = StyleSheet.create({
         width: Metrics.WIDTH * 0.8,
         backgroundColor: "rgba(255,255,255,0.4)"
     },
-    signInbtn: {
+    signInButtonStyle: {
         borderWidth: 1,
         borderColor: 'white',
         backgroundColor:'white',
@@ -163,14 +155,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 25
     },
-    buttongetstarted: {
+    signInButtonTextStyle: {
         fontFamily: Fonts.type.SFUIDisplayMedium,
         color: Colors.blacktxt,
         alignContent: 'center',
         alignSelf: 'center',
         fontSize: 20,
     },
-    buttongettext: {
+    forgotPasswordTextStyle: {
         alignSelf: "center",
         justifyContent: "center",
         fontFamily: Fonts.type.SFUIDisplayMedium,

@@ -33,18 +33,13 @@ export default class BCWRegisterScreen extends Component<Props> {
         this.props.navigation.pop();
     }
 
-    login = () =>
+    register = () =>
     {
-        alert('Login');
-    }
-
-    forgotPassword = () =>
-    {
-        alert('Forgot Password');
+        alert('Register');
     }
 
     render () {
-        let BG_logo = {
+        let appLogo = {
             uri : 'https://www.imperialnissan.co.za/images/Dealership/Icons/Car-White.png'
         };
         return (
@@ -60,54 +55,53 @@ export default class BCWRegisterScreen extends Component<Props> {
                     <BCWHeaderTitle>{ I18n.t('register_header_title') }</BCWHeaderTitle>
                     <Right/>
                 </BCWHeader>
-                <View style={styles.logosec}>
-                    <Image source={BG_logo} style={ styles.logo14 }/>
+                <View style={styles.logoSectionStyle}>
+                    <Image source={appLogo} style={ styles.logoImageStyle }/>
                 </View>
 
                 <View>
                     <View>
                         <Form style={styles.form}>
-                            <Item rounded style={styles.inputStyle}>
+                            <Item rounded style={styles.itemStyle}>
                                 <Input
                                     placeholderTextColor="#ffffff"
-                                    textAlign={I18nManager.isRTL ? "right" : "left"}
+                                    textAlign="left"
                                     placeholder="Username"
-                                    style={styles.inputmain}
+                                    style={styles.inputStyle}
                                 />
                             </Item>
-                            <Item rounded style={[styles.inputStyle, { marginTop: 10 }]}>
+                            <Item rounded style={[styles.itemStyle, { marginTop: 15 }]}>
                                 <Input
                                     placeholderTextColor="#ffffff"
                                     placeholder="Email"
-                                    textAlign={I18nManager.isRTL ? "right" : "left"}
-                                    style={styles.inputmain}
+                                    textAlign="left"
+                                    style={styles.inputStyle}
                                 />
                             </Item>
-                            <Item rounded style={[styles.inputStyle, { marginTop: 10 }]}>
+                            <Item rounded style={[styles.itemStyle, { marginTop: 15 }]}>
                                 <Input
                                     placeholderTextColor="#ffffff"
                                     placeholder="Password"
                                     secureTextEntry={true}
-                                    textAlign={I18nManager.isRTL ? "right" : "left"}
-                                    style={styles.inputmain}
+                                    textAlign="left"
+                                    style={styles.inputStyle}
                                 />
                             </Item>
-                            <Item rounded style={[styles.inputStyle, { marginTop: 10 }]}>
+                            <Item rounded style={[styles.itemStyle, { marginTop: 15 }]}>
                                 <Input
                                     placeholderTextColor="#ffffff"
-                                    placeholder="Password Confirmation"
+                                    placeholder="PasswordConfirmation"
                                     secureTextEntry={true}
-                                    textAlign={I18nManager.isRTL ? "right" : "left"}
-                                    style={styles.inputmain}
+                                    textAlign="left"
+                                    style={styles.inputStyle}
                                 />
                             </Item>
-
                             <TouchableOpacity
                                 info
-                                style={styles.signInbtn}
-                                onPress={() => this.login()}
+                                style={styles.signUpButtonStyle}
+                                onPress={() => this.register()}
                             >
-                                <Text autoCapitalize="words" style={styles.buttongetstarted}>
+                                <Text autoCapitalize="words" style={styles.signUpButtonTextStyle}>
                                     Sign Up
                                 </Text>
                             </TouchableOpacity>
@@ -121,24 +115,16 @@ export default class BCWRegisterScreen extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
-    logosec:{
+    logoSectionStyle:{
         height: (Metrics.HEIGHT*0.20),
         backgroundColor:'transparent',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    logo14:{
+    logoImageStyle:{
         height: (Metrics.HEIGHT*0.15),
         width:  (Metrics.WIDTH*0.35),
         marginTop: 10,
-    },
-    backarrow:{
-        left:0,
-        top:0,
-        width: 30,
-        position: 'absolute',
-        marginTop: 20,
-        marginLeft: 20
     },
     form: {
         width: Metrics.WIDTH,
@@ -148,13 +134,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignSelf: "center"
     },
-    inputStyle: {
+    itemStyle: {
         borderColor: "transparent",
         justifyContent: "center",
         alignSelf: "center",
         width: Metrics.WIDTH * 0.8
     },
-    inputmain: {
+    inputStyle: {
         fontFamily: Fonts.type.PlayfairDisplayBold,
         color: Colors.snow,
         justifyContent: "center",
@@ -166,7 +152,7 @@ const styles = StyleSheet.create({
         width: Metrics.WIDTH * 0.8,
         backgroundColor: "rgba(255,255,255,0.4)"
     },
-    signInbtn: {
+    signUpButtonStyle: {
         borderWidth: 1,
         borderColor: 'white',
         backgroundColor:'white',
@@ -178,18 +164,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 25
     },
-    buttongetstarted: {
+    signUpButtonTextStyle: {
         fontFamily: Fonts.type.SFUIDisplayMedium,
         color: Colors.blacktxt,
         alignContent: 'center',
         alignSelf: 'center',
         fontSize: 20,
-    },
-    buttongettext: {
-        alignSelf: "center",
-        justifyContent: "center",
-        fontFamily: Fonts.type.SFUIDisplayMedium,
-        color: Colors.snow,
-        marginTop: 15
     },
 });

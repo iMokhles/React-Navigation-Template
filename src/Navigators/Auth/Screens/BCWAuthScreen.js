@@ -45,7 +45,7 @@ export default class BCWAuthScreen extends Component<Props> {
     }
 
     render () {
-        let BG_logo = {
+        let appLogo = {
             uri : 'https://www.imperialnissan.co.za/images/Dealership/Icons/Car-White.png'
         };
         return (
@@ -55,42 +55,39 @@ export default class BCWAuthScreen extends Component<Props> {
                     <StatusBar barStyle="light-content"/>
                     <BCWHeaderTitle>{ I18n.t('login_header_title') }</BCWHeaderTitle>
                 </BCWHeader>
-                <View style={styles.logosec}>
-                    {/*<TouchableOpacity style={styles.backarrow} onPress={()=>this.props.navigation.navigate('SignUp')}>*/}
-                        {/*<Icon type="FontAwesome" name={I18nManager.isRTL ? "angle-right" : "angle-left"} size={30} color="white" />*/}
-                    {/*</TouchableOpacity>*/}
-                    <Image source={BG_logo} style={ styles.logo14 }/>
+                <View style={styles.logoSectionStyle}>
+                    <Image source={appLogo} style={ styles.logoImageStyle }/>
                 </View>
 
-                <View style={styles.slidemain}>
-                    <View style={styles.slidersec}>
+                <View style={styles.slideMainStyle}>
+                    <View style={styles.sliderSectionStyle}>
 
                         <Swiper showsButtons={false}
                                 autoplay={true}
                                 autoplayTimeout={2.5}
-                                activeDot={<View style={styles.activeDot} />}
+                                activeDotStyle={<View style={styles.activeDotStyle} />}
                                 dot={<View style={styles.dot} />}>
-                            <View style={styles.slide1}>
-                                <Text style={styles.headertext}>
+                            <View>
+                                <Text style={styles.slideTitleStyle}>
                                     Connect and discovery our Awesome UI Kit
                                 </Text>
-                                <Text style={styles.desctext}>
+                                <Text style={styles.slideDescriptionStyle}>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 </Text>
                             </View>
-                            <View style={styles.slide2}>
-                                <Text style={styles.headertext}>
+                            <View>
+                                <Text style={styles.slideTitleStyle}>
                                     Connect and discovery our Awesome UI Kit
                                 </Text>
-                                <Text style={styles.desctext}>
+                                <Text style={styles.slideDescriptionStyle}>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 </Text>
                             </View>
-                            <View style={styles.slide3}>
-                                <Text style={styles.headertext}>
+                            <View>
+                                <Text style={styles.slideTitleStyle}>
                                     Connect and discovery our Awesome UI Kit
                                 </Text>
-                                <Text style={styles.desctext}>
+                                <Text style={styles.slideDescriptionStyle}>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 </Text>
                             </View>
@@ -99,17 +96,17 @@ export default class BCWAuthScreen extends Component<Props> {
                     </View>
                 </View>
 
-                <View style={styles.btnsec}>
-                    <TouchableOpacity  info style={styles.buttonlogin} onPress = {() => this.facebook()}>
-                        <Text autoCapitalize="words" style={styles.loginbutton}>Connect with Facebook</Text>
+                <View style={styles.buttonsSectionStyle}>
+                    <TouchableOpacity  info style={styles.facebookButtonStyle} onPress = {() => this.facebook()}>
+                        <Text autoCapitalize="words" style={styles.facebookButtonTextStyle}>Connect with Facebook</Text>
                     </TouchableOpacity>
 
-                    <View style={styles.bottomsec}>
-                        <TouchableOpacity  info style={styles.buttonsignup01} onPress = {() => this.signup()}>
-                            <Text autoCapitalize="words"  style={styles.signupbutton}>Sign Up</Text>
+                    <View style={styles.bottomSection}>
+                        <TouchableOpacity  info style={styles.signButtonStyle} onPress = {() => this.signup()}>
+                            <Text autoCapitalize="words"  style={styles.signButtonTextStyle}>Sign Up</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity  info style={styles.buttonsignup01} onPress = {() => this.login()}>
-                            <Text autoCapitalize="words"  style={styles.signupbutton}>Login</Text>
+                        <TouchableOpacity  info style={styles.signButtonStyle} onPress = {() => this.login()}>
+                            <Text autoCapitalize="words"  style={styles.signButtonTextStyle}>Login</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -119,36 +116,28 @@ export default class BCWAuthScreen extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
-    logosec:{
+    logoSectionStyle:{
         height: (Metrics.HEIGHT*0.20),
         backgroundColor:'transparent',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    logo14:{
+    logoImageStyle:{
         height: (Metrics.HEIGHT*0.15),
         width:  (Metrics.WIDTH*0.35),
         marginTop: 10,
     },
-    backarrow:{
-        left:0,
-        top:0,
-        width: 30,
-        position: 'absolute',
-        marginTop: 20,
-        marginLeft: 20
-    },
-    slidersec:{
+    sliderSectionStyle:{
         height: (Metrics.HEIGHT*0.30),
         backgroundColor:'transparent'
     },
 
-    slidemain:{
+    slideMainStyle:{
         height: (Metrics.HEIGHT*0.40),
         backgroundColor:'transparent',
         justifyContent: 'center'
     },
-    activeDot:{
+    activeDotStyle:{
         backgroundColor: 'white',
         width: 10,
         height: 10,
@@ -168,7 +157,7 @@ const styles = StyleSheet.create({
         marginTop: 3,
         marginBottom: 3,
     },
-    headertext: {
+    slideTitleStyle: {
         fontFamily:Fonts.type.PlayfairDisplayBold,
         backgroundColor:'transparent',
         textAlign:'center',
@@ -178,7 +167,7 @@ const styles = StyleSheet.create({
         color:'white',
     },
 
-    desctext: {
+    slideDescriptionStyle: {
         fontFamily: Fonts.type.Bariol,
         backgroundColor:'transparent',
         textAlign:'center',
@@ -188,17 +177,17 @@ const styles = StyleSheet.create({
         color:'white',
         marginTop:20
     },
-    bottomsec:{
+    bottomSection:{
         width: Metrics.WIDTH * 0.80,
         alignSelf: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
-    btnsec:{
+    buttonsSectionStyle:{
         height: (Metrics.HEIGHT*0.30),
         backgroundColor: "rgba(255,255,255,0)",
     },
-    buttonlogin:{
+    facebookButtonStyle:{
         backgroundColor:'#3b5998',
         alignSelf:'center',
         borderRadius:40,
@@ -209,7 +198,7 @@ const styles = StyleSheet.create({
         marginTop:  Metrics.HEIGHT * 0.05
     },
 
-    buttonsignup01:{
+    signButtonStyle:{
         borderWidth: 1,
         borderColor: 'white',
         backgroundColor:'white',
@@ -220,14 +209,14 @@ const styles = StyleSheet.create({
         height: Metrics.HEIGHT * 0.06,
         justifyContent: 'center'
     },
-    loginbutton: {
+    facebookButtonTextStyle: {
         fontFamily: Fonts.type.SFUIDisplayMedium,
         color:'white',
         alignContent: 'center',
         alignSelf: 'center',
         fontSize: 20
     },
-    signupbutton: {
+    signButtonTextStyle: {
         fontFamily: Fonts.type.SFUIDisplayMedium,
         alignContent: 'center',
         color: Colors.blacktxt,
